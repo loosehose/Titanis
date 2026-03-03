@@ -339,3 +339,10 @@ ASALocalRun/
 /SmbNativeTest
 /src/formats/Titanis.Compression
 /exp
+
+# Fork working files
+.claude/
+findings.md
+progress.md
+task_plan.md
+test/ldap-live-test/
