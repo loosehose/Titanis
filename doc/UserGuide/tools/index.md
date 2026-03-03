@@ -43,6 +43,10 @@ This index lists the tools by command name as well as by task.
 |[Scm query](Scm.md#scm-query)|Queries the status of a service|
 |[Scm start](Scm.md#scm-start)|Starts a service|
 |[Scm stop](Scm.md#scm-stop)|Stops a service|
+|[Snaffler](Snaffler.md#snaffler)|Hunt for credentials and secrets on SMB shares|
+|[Snaffler scan](Snaffler.md#snaffler-scan)|Scan SMB shares for credentials and secrets|
+|[Snaffler shares](Snaffler.md#snaffler-shares)|Enumerate shares on target hosts|
+|[Snaffler rules](Snaffler.md#snaffler-rules)|List loaded classification rules|
 |[Smb2Client](Smb2Client.md#smb2client)|Performs operations on an SMB2 server.|
 |[Smb2Client enumnics](Smb2Client.md#smb2client-enumnics)|Queries the server for a list of network interfaces.|
 |[Smb2Client enumopenfiles](Smb2Client.md#smb2client-enumopenfiles)|Lists files open on the server.|
@@ -81,6 +85,10 @@ This index lists the tools by command name as well as by task.
 |-|-|
 |****|
 |Coerce a system to authenticate to a remote target|[CredCoerce](CredCoerce.md#credcoerce)|
+|**Credential Hunting**|
+|Scan SMB shares for credentials and secrets|[Snaffler scan](Snaffler.md#snaffler-scan)|
+|Enumerate shares on target hosts|[Snaffler shares](Snaffler.md#snaffler-shares)|
+|List classification rules|[Snaffler rules](Snaffler.md#snaffler-rules)|
 |**Enumeration**|
 |Check whether a user name is valid|[Kerb getasinfo](Kerb.md#kerb-getasinfo)|
 |Check whether a user name is valid|[Kerb asreq](Kerb.md#kerb-asreq)|
@@ -93,6 +101,7 @@ This index lists the tools by command name as well as by task.
 |Enumerate the rights and privileges granted to an account|[Lsa getrights](Lsa.md#lsa-getrights)|
 |Enumerate the sessions of users connected to an SMB server|[Smb2Client enumsessions](Smb2Client.md#smb2client-enumsessions)|
 |Enumerate the shares of an SMB server|[Smb2Client enumshares](Smb2Client.md#smb2client-enumshares)|
+|Enumerate shares and check accessibility|[Snaffler shares](Snaffler.md#snaffler-shares)|
 |Enumerate the system access rights granted to an account|[Lsa getsysaccess](Lsa.md#lsa-getsysaccess)|
 |Enumerate the volume snapshots on an SMB server|[Smb2Client enumsnapshots](Smb2Client.md#smb2client-enumsnapshots)|
 |Executes a WMI query|[Wmi query](Wmi.md#wmi-query)|
@@ -159,6 +168,10 @@ This index lists the tools by command name as well as by task.
 |Query the triggers configured to start or stop a service|[Scm qtriggers](Scm.md#scm-qtriggers)|
 |Start a service|[Scm start](Scm.md#scm-start)|
 |Stop a service|[Scm stop](Scm.md#scm-stop)|
+|**Snaffler**|
+|Scan SMB shares for credentials and secrets|[Snaffler scan](Snaffler.md#snaffler-scan)|
+|Enumerate shares on target hosts|[Snaffler shares](Snaffler.md#snaffler-shares)|
+|List classification rules|[Snaffler rules](Snaffler.md#snaffler-rules)|
 |**SMB**|
 |Create a directory junction or mount point on an SMB share|[Smb2Client mount](Smb2Client.md#smb2client-mount)|
 |Create a directory on an SMB share|[Smb2Client mkdir](Smb2Client.md#smb2client-mkdir)|
