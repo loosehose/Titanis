@@ -18,20 +18,27 @@ dotnet build
 
 See [BUILD.md](BUILD.md) for prerequisites and platform-specific instructions.
 
-## Usage
+## Snaffler
+
+![Snaffler scan output](assets/snaffler-scan-output.png)
 
 Each tool builds as a standalone binary:
 
 ```
 # Scan shares for credentials
-Snaffler scan -Target dc01.corp.local -MaxDepth 5
+Snaffler scan dc01.corp.local -u admin -p 'Password123!'
+
+# Discover targets via LDAP and scan
+Snaffler scan -d dc01.corp.local -u admin -ud CORP -p 'Password123!'
 
 # List shares on a target
-Snaffler shares dc01.corp.local
+Snaffler shares dc01.corp.local -u admin -ud CORP -p 'Password123!'
 
-# SMB client (upstream tool)
-Smb2Client dir \\\\server\\share
+# List loaded classification rules
+Snaffler rules
 ```
+
+For the full command reference, see the [Snaffler Usage Guide](doc/UserGuide/tools/Snaffler-Usage.md).
 
 ## Upstream
 
