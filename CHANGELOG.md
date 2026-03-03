@@ -1,5 +1,28 @@
 Change Log
 
+# Fork Additions (v0.9.1-fork.1)
+
+* LDAP client library (`Titanis.Net.Ldap`)
+	* RFC 4511 protocol implementation (bind, search, unbind)
+	* SP-NEGO authentication (Kerberos and NTLM)
+	* LDAP search filter parser with full RFC 4515 syntax
+	* Active Directory convenience layer (`AdClient`)
+* Snaffler cross-platform credential hunting tool
+	* SMB share enumeration and recursive file walking
+	* TOML-based classification rules (file name, path, content)
+	* LDAP-based target discovery
+	* Integrates with Titanis SMB2, Kerberos, and NTLM
+
+## Bugfixes
+
+* Handle KRB-ERROR without e-data
+* Don't attempt NTLM with S4U
+* Fix inter-realm Kerberos referral handling
+* Socket service ConnectTcp reliability
+* Fix build targets for tool projects
+* Fix ASN.1 type visibility for cross-project references
+* Fix formatting in syntax-auth.md table
+
 # 2025-11-03
 
 * Kerberos

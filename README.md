@@ -1,3 +1,44 @@
+# Titanis (Fork)
+
+Fork of [TrustedSec's Titanis](https://github.com/trustedsec/Titanis) with the following additions:
+
+**Titanis.Net.Ldap** -- LDAP client library ([RFC 4511](https://datatracker.ietf.org/doc/html/rfc4511)) with SP-NEGO authentication, search filters, and an Active Directory convenience layer. Integrates with the existing Kerberos/NTLM auth stack.
+
+**Snaffler** -- Cross-platform credential hunting tool. Walks SMB shares, classifies files using TOML rule sets, and reports credential material. A from-scratch reimplementation on top of Titanis's SMB2 client (not a port of the original C# Snaffler).
+
+Also includes 12 bug fixes found during live AD testing (Kerberos inter-realm, KRB-ERROR handling, NTLM/S4U interactions, socket services, and build/visibility fixes).
+
+## Quick Start
+
+```
+git clone https://github.com/loosehose/Titanis.git
+cd Titanis
+dotnet build
+```
+
+See [BUILD.md](BUILD.md) for prerequisites and platform-specific instructions.
+
+## Usage
+
+Each tool builds as a standalone binary:
+
+```
+# Scan shares for credentials
+Snaffler scan -Target dc01.corp.local -MaxDepth 5
+
+# List shares on a target
+Snaffler shares dc01.corp.local
+
+# SMB client (upstream tool)
+Smb2Client dir \\\\server\\share
+```
+
+## Upstream
+
+This fork tracks the `public` branch of [trustedsec/Titanis](https://github.com/trustedsec/Titanis). All original functionality is preserved.
+
+---
+
 # Introduction
 Titanis is a library of protocol implementations and command line utilities, written in C#, for interacting with Windows environments.  It uses .NET 8 and is cross-platform (Windows and Linux).  Some of the protocols implemented:
 
@@ -57,7 +98,7 @@ If you are a developer, see the [Developer Guide](doc/DevGuide/index.md) for inf
 
 # Planned Enhancements
 * Task Scheduler support ([MS-TSCH](https://winprotocoldoc.z19.web.core.windows.net/MS-TSCH/[MS-TSCH].pdf))
-* LDAP and LDAP-based tooling ([RFC4511](https://datatracker.ietf.org/doc/html/rfc4511), portions of [MS-ADTS](https://winprotocoldoc.z19.web.core.windows.net/MS-ADTS/[MS-ADTS].pdf))
+* ~~LDAP and LDAP-based tooling ([RFC4511](https://datatracker.ietf.org/doc/html/rfc4511), portions of [MS-ADTS](https://winprotocoldoc.z19.web.core.windows.net/MS-ADTS/[MS-ADTS].pdf))~~ (done -- see Titanis.Net.Ldap)
 * Simplified credential management
 * DCSync and secret-dumping functionality ([MS-DRSR](https://winprotocoldoc.z19.web.core.windows.net/MS-DRSR/[MS-DRSR].pdf))
 * Integrated SOCKS 4a
